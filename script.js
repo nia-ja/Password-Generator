@@ -14,6 +14,15 @@ const randomFunc = {
     symbol: getRandomSymbol,
 }
 
+clipboardEl.addEventListener('click', () => {
+    const password = resultEl.innerText;
+
+    if (!password) {return;}
+
+    navigator.clipboard.writeText(password);
+    alert('Password copied to clipboard!')
+})
+
 generateEl.addEventListener("click", () => {
     // "+" is for converting string to number
     const length = +lengthEl.value;
